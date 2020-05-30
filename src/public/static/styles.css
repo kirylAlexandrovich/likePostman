@@ -1,0 +1,51 @@
+header {
+    text-align: center;
+}
+
+form {
+    width: 760px;
+    margin: auto;
+}
+
+textarea {
+    max-width: 800px;
+    min-width: 700px;
+    max-height: 600px;
+}
+
+#urlInput {
+    width: 490px;
+}
+
+.param_container {
+    width: 360px;
+}
+
+.param_values-container {
+    display: flex;
+}
+
+.param_values-container input {
+    margin-bottom: 4px;
+}
+
+.param_input-container {
+    width: 180px;
+}
+
+.params-buttons {
+    width: 50px;
+    margin: 5px 5px 0 auto;
+}
+
+#contentTypeInput {
+    width: 300px;
+    margin-right: 420px;
+}
+
+.result-container {
+    width: 90%;
+    margin: 40px auto;
+    background-color: #fffcec;
+    overflow-x: auto;
+}

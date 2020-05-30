@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>likePostman</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Like POSTMAN</h1>
+</header>
+
+<main>
+    <form>
+        <label for="methodInput">Method</label>
+        <select id="methodInput" name="method">
+            <option>GET</option>
+            <option>POST</option>
+            <option>PUT</option>
+            <option>PATCH</option>
+            <option>DELETE</option>
+            <option>HEAD</option>
+            <option>CONNECT</option>
+            <option>OPTIONS</option>
+            <option>TRACE</option>
+        </select>
+
+        <label for="urlInput">Request url</label>
+        <input type="url" id="urlInput" name="url" value="">
+
+        <fieldset class="param_container">
+            <legend>Params</legend>
+
+            <div class="param_values-container">
+                <div class="param_input-container" id="paramInputContainerKey">
+                    <label for="paramKey_0">
+                        Key
+                        <input type="text" id="paramKey_0" name="paramKey_0" value="">
+                    </label>
+                </div>
+
+                <div class="param_input-container" id="paramInputContainerValue">
+                    <label for="paramValue_0">
+                        Value
+                        <input type="text" id="paramValue_0" name="paramValue_0" value="">
+                    </label>
+                </div>
+            </div>
+
+            <div class="params-buttons">
+                <button type="button" class="param-button" id="addParam">+</button>
+                <button type="button" class="param-button" id="removeParam">-</button>
+            </div>
+        </fieldset>
+
+        <label for="headersInput">Headers</label>
+        <textarea cols="100" rows="5" id="headersInput" name="headers" placeholder="Make sure you write in JSON format"></textarea>
+
+        <label for="contentTypeInput">Content-type</label>
+        <input type="text" id="contentTypeInput" name="contentType" list="contentTypeList" value="" />
+        <datalist id="contentTypeList">
+            <option>application/x-www-form-urlencoded</option>
+            <option>application/json</option>
+            <option>text/html</option>
+            <option>application/javascript</option>
+        </datalist>
+
+        <label for="bodyInput">Body</label>
+        <textarea cols="100" rows="5" id="bodyInput" name="body"></textarea>
+
+        <button type="button" id="submitButton">Send</button>
+    </form>
+
+    <pre id="result" class="result-container"></pre>
+</main>
+
+<script src="main.js" type="module"></script>
+</body>
+</html>

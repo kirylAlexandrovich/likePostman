@@ -1,0 +1,22 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base/legacy"
+  ],
+  "rules": {
+    "semi": "error",
+    "linebreak-style": ["error", "windows"],
+    "indent": ["error", 4,  { "SwitchCase": 1 }],
+    "no-console": 0,
+    "no-underscore-dangle": ["error", { "allow": ["__dirname"] }],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"]
+  },
+  "env": {
+    "node": true
+  }
+}
