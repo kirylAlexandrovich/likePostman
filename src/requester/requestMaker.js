@@ -13,18 +13,19 @@ function getHeaders(headers) {
 async function getBody(res, contentType) {
     let result;
 
-    switch (contentType) {
-        case 'application/json; charset=utf-8':
+    try {
+        if (contentType.search(/application\/json/) !== -1) {
             result = await res.json();
-            break;
-        case 'text/html; charset=utf-8':
+        }
+
+        if (contentType.search(/text/) !== -1) {
             result = await res.text();
-            break;
-        default:
-            result = `Content type ${contentType} is not support yet!`;
+        }
+    } catch (e) {
+        console.log(e);
     }
 
-    return result;
+    return result || `Content type ${contentType} is not support yet!`;
 }
 
 async function makeRequest(reqData) {
