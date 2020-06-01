@@ -13,13 +13,13 @@ function validateRequestData(data) {
         validateResult.method = 'Method is not valid';
     }
 
-    if (checkStringLength(url, 6)) {
+    if (checkStringLength(url, 6) || url.search(/http/ === -1)) {
         validateResult.url = 'Make sure you typed full URL';
     }
 
-    // if (url && url.search(/localhost/) !== -1) {
-    //     validateResult.url = 'You can not send request to localhost';
-    // }
+    if (url && url.search(/localhost/) !== -1) {
+        validateResult.url = 'You can not send request to localhost';
+    }
 
     const setParamError = (errText) => {
         if (!validateResult.paramsError) validateResult.paramsError = [];
